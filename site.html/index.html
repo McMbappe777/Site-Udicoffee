@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafeteria Udicoffee</title>
+    <!-- Link para Google Fonts e Font Awesome (ícones) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(45deg, #ff6347, #ff9c6b);
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        .sobre, .show, .menu, .contato {
+            padding: 60px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sobre h2, .show h2, .menu h2 {
+            font-size: 2.5rem;
+            color: #ff6347;
+            margin-bottom: 20px;
+        }
+
+        .sobre p, .show p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 20px auto;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .produto {
+            display: inline-block;
+            width: 28%;
+            margin: 1.5%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        }
+
+        .produto:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .produto img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .produto:hover img {
+            transform: scale(1.05);
+        }
+
+        .produto h3 {
+            font-size: 1.5rem;
+            color: #ff6347;
+            margin-top: 15px;
+        }
+
+        .produto p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .form-contato input, .form-contato textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .form-contato button {
+            background-color: #ff6347;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-contato button:hover {
+            background-color: #e53d29;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer .social-icons a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #ff6347;
+        }
+
+        @media (max-width: 768px) {
+            .produto {
+                width: 48%;
+            }
+
+            .form-contato {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .produto {
+                width: 100%;
+            }
+
+            .form-contato {
+                width: 90%;
+            }
+        }
+        .assistir-btn {
+    background-color: #ff6347; /* Cor do botão */
+    color: white; /* Texto branco */
+    padding: 12px 30px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    border-radius: 25px; /* Bordas arredondadas */
+    font-size: 1.2rem; /* Tamanho do texto */
+    font-weight: 600; /* Peso do texto */
+    cursor: pointer; /* Apontador de mouse */
+    transition: all 0.3s ease-in-out; /* Transições suaves */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-decoration: none; /* Remover sublinhado */
+}
+
+.assistir-btn:hover {
+    background-color: #ff4500; /* Cor do botão quando hover */
+    transform: translateY(-5px); /* Efeito de elevação */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Efeito de sombra mais intenso */
+}
+
+.assistir-btn:focus {
+    outline: none; /* Remove o contorno ao clicar */
+}
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Cafeteria Udicoffee</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#show">Show</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="sobre" class="sobre">
+        <h2>Sobre a Udicoffee</h2>
+        <p>Bem-vindo à Cafeteria Udicoffee! Aqui você encontrará o melhor café, tortas e um ambiente acolhedor, onde todos se sentem em casa. Venha conferir as delícias que o Homer, Marge, Bart, Lisa e Maggie adoram!</p>
+        <img src="https://acdn.mitiendanube.com/stores/438/755/products/bd192f2723f7d81013f04903d9e0428b1-0af02ae88c4672c25416197943153207-640-0.png" alt="Homer Simpson" width="200">
+    </section>
+
+<section id="show" class="show">
+    <h2>Não Perca o Show Especial!</h2>
+    <p>Junte-se a nós para um evento especial com a turma 0135. Acompanhe um episódio exclusivo dos Simpsons enquanto saboreia nossas delícias. Venha para um momento único!</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Bart_Simpson_2006.png/220px-Bart_Simpson_2006.png" alt="Bart Simpson" width="200">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Lisa_Simpson_2006.png/220px-Lisa_Simpson_2006.png" alt="Lisa Simpson" width="200">
+    <p><a href="https://bit.ly/3YVd2n6" target="_blank">
+        <button class="assistir-btn">Assistir Episódio dos Simpsons</button>
+    </a></p>
+</section>
+
+
+    <section id="menu" class="menu">
+        <h2>Nosso Menu</h2>
+        <div class="produto">
+            <img src="https://via.placeholder.com/300x200/FF6347/FFFFFF?text=Espresso" alt="Café Espresso">
+            <h3>Café Espresso do Homer</h3>
+            <p>Um café forte e intenso, ideal para começar o dia com energia, assim como o Homer gosta.</p>
+        </div>
+        <div class="produto">
+            <img src="https://via.placeholder.com/300x200/FF6347/FFFFFF?text=Cappuccino" alt="Cappuccino">
+            <h3>Cappuccino Marge</h3>
+            <p>Leve e cremoso, com um toque suave de leite vaporizado. Perfeito para quem adora um cappuccino.</p>
+        </div>
+        <div class="produto">
+            <img src="https://via.placeholder.com/300x200/FF6347/FFFFFF?text=Torta+de+Chocolate" alt="Torta de Chocolate">
+            <h3>Torta de Chocolate Bart</h3>
+            <p>Uma torta deliciosa e cheia de sabor, assim como o Bart ama!</p>
+        </div>
+    </section>
+
+    <section id="contato" class="contato">
+        <h2>Entre em Contato</h2>
+        <div class="form-contato">
+            <input type="text" id="nome" placeholder="Seu Nome" required>
+            <input type="email" id="email" placeholder="Seu Email" required>
+            <textarea id="mensagem" placeholder="Sua Mensagem" rows="4" required></textarea>
+            <button onclick="enviarMensagem()">Enviar Mensagem</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Cafeteria Udicoffee</p>
+        <p>Siga-nos nas redes sociais:</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram.com/udic0fee_
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        function enviarMensagem() {
+            alert("Sua mensagem foi enviada! Obrigado por entrar em contato.");
+        }
+    </script>
+
+</body>
+</html>
